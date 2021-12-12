@@ -1,0 +1,205 @@
+Question Title :Crypto
+Problem description:
+A sasken employee wanted to send a message to his friend in a group chat but he doesn't want other employees to know what the message is. so he decided to encrypt his message and send it in the group chat. as you who is a friend of him know how to decrypt it as you know how it is encrypted.
+
+Sasken employee decided to change all the common letters used in English language to some symbols so that reading it when it's encrypted doesn't give any meaning to other employees.But you as his friend knows how to decrypt it.
+
+The encryption is as follows:
+
+e -> !
+t -> @
+a -> #
+i -> $
+o -> %
+n -> ^
+s -> &
+h -> *
+r -> (
+
+So you as his friend need to write a function to decrypt the message sent to you by him.
+
+Input constraints:
+All the letters in the message will be lowercase and maximum length will not exceed 2^32 -1
+
+Input format:
+Encrpted string str.
+
+output format:
+manipulate the string(as its a pass by reference to function) str so that it's encrypted.
+
+sample input:
+sasken
+gururaj
+batman
+ilovecandy
+sample output:
+&#&k!^
+gu(u(#j
+b#)m#^
+$l%v!c#^dy
+
+
+
+ANSWER
+=====================================================================
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+#include<windows.h>
+#include<cstdlib>
+using namespace std;
+
+main()
+{
+const char *stringlength;
+char input[100];
+int i;
+
+cout<<"Input letters only:";
+cin>>input;
+stringlength=input;
+cout<<"\nEncryption Value:";
+for(i=0; i<strlen(stringlength); i++)
+{
+
+    switch(input[i])
+    {
+    case 'a':cout<<"#";break;
+    case 'e':cout<<"!";break;
+    case 't':cout<<"@";break;
+    case 'i':cout<<"$";break;
+    case 'o':cout<<"%";break;
+    case 'n':cout<<"^";break;
+    case 's':cout<<"&";break;
+    case 'h':cout<<"*";break;
+    case 'r':cout<<"(";break;
+    case 'A':cout<<"A";break;
+    case 'B':cout<<"B";break;
+    case 'C':cout<<"C";break;
+    case 'D':cout<<"D";break;
+    case 'E':cout<<"E";break;
+    case 'F':cout<<"F";break;
+    case 'G':cout<<"G";break;
+    case 'H':cout<<"H";break;
+    case 'I':cout<<"I";break;
+    case 'J':cout<<"J";break;
+    case 'K':cout<<"K";break;
+    case 'L':cout<<"L";break;
+    case 'M':cout<<"M";break;
+    case 'N':cout<<"N";break;
+    case 'O':cout<<"O";break;
+    case 'P':cout<<"P";break;
+    case 'Q':cout<<"Q";break;
+    case 'R':cout<<"R";break;
+    case 'S':cout<<"S";break;
+    case 'T':cout<<"T";break;
+    case 'U':cout<<"U";break;
+    case 'V':cout<<"V";break;
+    case 'W':cout<<"W";break;
+    case 'X':cout<<"X";break;
+    case 'Y':cout<<"Y";break;
+    case 'Z':cout<<"Z";break;
+    case 'b':cout<<"b";break;
+    case 'c':cout<<"c";break;
+    case 'd':cout<<"d";break;
+    case 'f':cout<<"f";break;
+    case 'g':cout<<"g";break;
+    case 'j':cout<<"j";break;
+    case 'k':cout<<"k";break;
+    case 'l':cout<<"l";break;
+    case 'm':cout<<"m";break;
+    case 'p':cout<<"p";break;
+    case 'q':cout<<"q";break;
+    case 'u':cout<<"u";break;
+    case 'v':cout<<"v";break;
+    case 'x':cout<<"x";break;
+    case 'y':cout<<"y";break;
+    case 'z':cout<<"z";break;
+    default : cout<<"\nInvalid Character!\n"; break;
+    }
+}
+getch();
+return 0;
+}
+
+
+OUTPUT:
+
+Input letters only:
+sasken
+
+Encryption Value:
+&#&k!^
+
+========================================================================================================
+2.function with passing arrays as a arguments..in c++
+#include <iostream>
+#include <cstring>
+using namespace std;
+//function declaration
+void displayCards(string faceCards[4], int displayCards[10]);
+int main() {
+ string faceCards[] = {"Jack", "Queen", "King", "Ace"};
+ int faceValues[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+ displayCards(faceCards, faceValues);
+ return 0;
+}
+void displayCards(string c[4], int f[10]) {
+ cout << "Showing the Face Cards: " << endl;
+ for(int i = 0; i < 4; i++) {
+  cout << "Face Card = " << i + 1 << " : " << c[i] << endl;
+ }
+ for(int j = 0; j < 10; j++) {
+  cout << "Face Value = " << j + 1 << " : " << f[j] << endl;
+ }
+}
+==============================================================================
+inserting array into a specific postion.
+Answer
+#include<iostream>
+using namespace std;
+int main()
+{
+  int arr[500], sizee, pos, i, insElem;
+  pos=6;
+
+  cout << "Enter the size of an array (Max size: 30): ";
+  cin >> sizee;
+
+  cout << "Enter array elements:\n";
+  for (i = 0; i < sizee; i++)
+    cin >> arr[i];
+
+  cout << "\nEnter element to be inserted: ";
+  cin >> insElem;
+
+  cout << "Enter the position: "; //position specified
+  cin >> pos;
+
+  for (i = sizee; i >= pos; i--)
+    arr[i] = arr[i - 1];
+
+ arr[pos] = insElem;
+
+  //Display new array
+  cout << "New Array after Insertion:\n";
+  for (i = 0; i < (sizee + 1); i++)
+    cout << arr[i] << " ";
+
+  return 0;
+}
+
+output:
+Enter the size of an array (Max size: 30): 5
+Enter array elements:
+100
+300
+499
+45
+55
+
+Enter element to be inserted: 10000
+Enter the position:
+3
+New Array after Insertion:
+100 300 499 10000 45 55
